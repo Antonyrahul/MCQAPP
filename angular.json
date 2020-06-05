@@ -24,9 +24,17 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/@popperjs/core/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+
+              
+
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "testapp"
+    }
+  },
+  "defaultProject": "testapp",
+  "cli": {
+    "analytics": false
+  }
 }

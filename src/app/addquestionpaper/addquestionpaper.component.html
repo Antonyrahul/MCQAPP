@@ -1,0 +1,54 @@
+
+<div class="signup-form">
+    <form  [formGroup]= "registerform" (submit)="processdata();">
+		<h2>Q NO:-{{this.questionNumber}}</h2>
+        <p class="hint-text">Add question here.</p>
+        <div class="form-group">
+            <h6>Question:-</h6>
+        	<input type="text" class="form-control" formControlName="question" placeholder="question" required="required">
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Option1:-</h6></div>
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Option2:-</h6></div>
+				
+            </div> 
+            
+			<div class="row">
+                
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="text" class="form-control" formControlName="option1" placeholder="option1" required="required"></div>
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="text" class="form-control" formControlName="option2" placeholder="option2" required="required"></div>
+            </div>      
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Option3:-</h6></div>
+                <div class="col-lg-6 col-md-6 col-sm-6"><h6>Option4:-</h6></div>
+				
+            </div>
+            <div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="text" class="form-control" formControlName="option3" placeholder="option3" required="required"></div>
+				<div class="col-lg-6 col-md-6 col-sm-6"><input type="text" class="form-control" formControlName="option4" placeholder="option4" required="required"></div>
+			</div>   	
+        </div>
+        <div class = "row"></div>
+        <h6>correct option:-</h6>
+        <select class = "form-control" formControlName = "answer">
+            <option value="option1">option1</option>
+            <option value=option2>option2</option>
+            <option value="option3">option3</option>
+            <option value="option4">option4</option>
+          </select>
+          <br><br>
+
+
+		<div *ngIf = "this.questionNumber<3" class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Next Question</button>
+        </div>
+        <div *ngIf="this.questionNumber==3" class="form-group">
+            <button  class="btn btn-success btn-lg btn-block" (click)="saveQuestionPapaer()">Sumbit Paper</button>
+        </div>
+    </form>
+
+    
+</div>
+
+                         

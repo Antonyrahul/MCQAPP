@@ -1,0 +1,41 @@
+<div class="card text-center">
+    <div class="card-header">
+      
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Enter the test name</h5>
+    <div>
+      <input type="text" #testname class = "form-control" placeholder="Enter test name">
+      </div>
+      <div class = "btn">
+        <button  class="btn btn-primary" (click) = "processdata();">Add test</button>
+    </div>
+
+    
+    
+    </div>
+
+  </div>
+ 
+ <!-- <div  class="row display">
+
+    <div *ngFor="let details of prod; " class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+       
+        <div class="card-body">
+          <h5 class ="card-title">Longurl:</h5>
+          <h6 class="card-title">
+            <a  href="{{details.longurl}}">{{details.longurl}}</a>
+          </h6>
+          <h5 class ="card-title">Shorturl:</h5>
+          <h6 class="card-title">
+            <a  [routerLink]="[details.shorturl]">{{details.shorturl}}</a>
+          </h6>
+          <h5 class ="card-title">VisitCount from homepage:{{details.homevisitcount}}</h5>
+          <h5 class ="card-title">VisitCount from external:{{details.externalvisitcount}}</h5>
+          <a [routerLink]="['/history',details.shorturl]" class="btn btn-success">Show history</a>
+        </div>
+
+      </div>
+    </div>
+  </div> -->
