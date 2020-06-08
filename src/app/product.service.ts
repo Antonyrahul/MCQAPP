@@ -19,10 +19,34 @@ export class ProductService {
   saveQuestionPaper(data):Observable<any>
   {
     console.log(data)
-    return this.http.post("http://localhost:4123/questionpaper",data)
+    return this.http.post("http://localhost:4123/savequestionpaper",data)
   }
   genTestId():Observable<any>
   {
     return this.http.get("http://localhost:4123/generatetestid")
   }
+  getTests(data):Observable<any>
+  {
+    return this.http.post("http://localhost:4123/getavailabletests",data)
+  }
+  getQuestionPaper(data):Observable<any>
+  {
+    return this.http.post("http://localhost:4123/getquestionpaper",data)
+  }
+  saveAnswerSheet(data):Observable<any>
+  {
+    console.log(data)
+    return this.http.post("http://localhost:4123/saveanswersheet",data)
+  }
+  updateTestIdInStudentDB(data):Observable<any>
+  {
+    console.log(data)
+    return this.http.post("http://localhost:4123/updateTestIdInStudentDB",data)
+  }
+  
+  verifyTestEligibility(data):Observable<any>
+ {
+      return  this.http.post("http://localhost:4123/verifytesteligible",data)
+ }
+  
 }

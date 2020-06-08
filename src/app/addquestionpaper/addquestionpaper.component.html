@@ -44,7 +44,7 @@
             <button type="submit" class="btn btn-success btn-lg btn-block">Next Question</button>
         </div>
         <div *ngIf="this.questionNumber==3" class="form-group">
-            <button  class="btn btn-success btn-lg btn-block" (click)="saveQuestionPapaer()">Sumbit Paper</button>
+            <button  class="btn btn-success btn-lg btn-block" (click)=" processdata();saveQuestionPapaer()">Sumbit Paper</button>
         </div>
     </form>
 

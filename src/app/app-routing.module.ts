@@ -5,7 +5,7 @@ import {RegisterComponent} from './register/register.component'
 import {QuestionsComponent} from './questions/questions.component'
 import {AddquestionpaperComponent} from './addquestionpaper/addquestionpaper.component'
 import {TeachersDashboardComponent} from './teachers-dashboard/teachers-dashboard.component'
-
+import {StudentdashboardComponent} from './studentdashboard/studentdashboard.component'
 
 
 const routes: Routes = [
@@ -27,7 +27,16 @@ const routes: Routes = [
   },
   {  path:"teachersdashboard",
      component :TeachersDashboardComponent
+  },
+  {
+    path:"studentdashboard",
+    component:StudentdashboardComponent
+  },
+  {
+    path:"test/:id",
+    component:QuestionsComponent
   }
+
 ];
 
 @NgModule({

@@ -53,7 +53,7 @@ export class AddquestionpaperComponent implements OnInit {
   saveQuestionPapaer()
   {
     var data = {
-      email:localStorage.getItem("name"),
+      email:localStorage.getItem("email"),
       testname : localStorage.getItem("testname"),
       testid : this.activatedroute.snapshot.params.id,
       questionpaper:this.questionsArray

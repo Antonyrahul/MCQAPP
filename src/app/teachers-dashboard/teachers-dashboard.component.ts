@@ -15,14 +15,15 @@ export class TeachersDashboardComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  processdata()
+  processdata(testname)
   {
-    this.testname = document.getElementById('testname')
+    console.log(testname)
+    //this.testnamee = document.getElementById('testname')
     //console.log(this.registerform.value)
     this.productservice.genTestId().subscribe((data)=>{
       console.log(data)
       localStorage.removeItem("testname")
-      localStorage.setItem("testname",this.testname)
+      localStorage.setItem("testname",testname)
       this.router.navigate(['addquestionpaper/'+data.testid])
 
     })

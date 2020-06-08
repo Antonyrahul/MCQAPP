@@ -1,3 +1,4 @@
+
 .funkyradio div {
     clear: both;
     overflow: hidden;
@@ -107,3 +108,30 @@
     background-color: #5bc0de;
   }
   
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: #f1f1f1;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin-left: 10%;
+    width: auto;
+    
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+  .question{
+    background: #75ba48;
+    padding: 20px;
+    color: #fff;
+    border-bottom-right-radius: 55px;
+    border-top-left-radius: 55px;
+}
+body, html{
+  height: 100%;
+  background: #222222;
+  font-family: 'Lato', sans-serif;
+}
