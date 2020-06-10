@@ -1,8 +1,15 @@
  
-      <div class ="mainclass" *ngIf = !this.isfinished>
-  <h4>TEST NAME  {{this.testname}}</h4>
+ <h4>TEST NAME  {{this.testname}}</h4>
+ <h6>Timer:-{{this.timeelapsed}} seconds</h6>
+
+ <div class = "btn">
+    <button  class="btn btn-primary" *ngIf="!this.isstart" (click) = "starttest();">Start test</button>
+</div>
+ 
+      <div class ="mainclass" *ngIf = !this.isfinished&&this.isstart>
+ 
      
-        <div class = "question"><h4>Q NO {{this.index+1}} :- {{ this.questiontodisplay}}</h4></div>
+        <div class = "question"><h4>Q NO {{this.index+1}} :- {{this.prod[this.index]["question"]}}</h4></div>
         <br>
 
     
@@ -21,20 +28,20 @@
                         <form  [formGroup]= "questionform" (submit)="nextquestion();">
     <div class="funkyradio -primary">
         <div class="funkyradio-primary">
-            <input type="checkbox" id="radio1" formControlName="option1" />
+            <input type="checkbox" id="radio1" formControlName="Option1" />
             <label for="radio1">{{this.prod[this.index]["option1"]}}</label>
         </div>
         <div class="funkyradio-primary">
-            <input type="checkbox"  id="radio2" formControlName="option2"/>
+            <input type="checkbox"  id="radio2" formControlName="Option2"/>
             <label for="radio2">{{this.prod[this.index]["option2"]}}</label>
         </div>
         <div class="funkyradio-primary">
-            <input type="checkbox"  id="radio3" formControlName="option3"/>
+            <input type="checkbox"  id="radio3" formControlName="Option3"/>
             <label for="radio3">{{this.prod[this.index]["option3"]}}</label>
         </div>
         <div class="funkyradio-primary">
-            <input type="checkbox"  id="radio4" formControlName="option4" />
-            <label for="radio4">{{this.prod[this.index]["option3"]}}</label>
+            <input type="checkbox"  id="radio4" formControlName="Option4" />
+            <label for="radio4">{{this.prod[this.index]["option4"]}}</label>
         </div>
         <div *ngIf= "this.index<this.prod.length-1">
             <button  class="btn btn-primary" type ="submit">Submit and next</button>
@@ -54,4 +61,43 @@
 </div>
 </div>
 </div>
-<div *ngIf = "this.isfinished">No of correct answers ={{this.correctquestioncount}} </div>
+
+
+
+  <div *ngIf = "this.isfinished" class="col-lg-9 result">
+
+
+    <div  class="row">
+
+      <div  class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100">
+        
+          <div class="card-body">
+            <h4 class="card-title">Results for test {{this.testname}}</h4>
+            <h5>No of correct questions = {{this.correctquestioncount}}</h5>
+            <h5 >Time taken = {{this.timeelapsed}} seconds</h5>
+            <h5 >Moved from test {{this.cheatcount}} times</h5>
+            <h4>Test Status</h4>
+                <h4 class = "pass" *ngIf = "this.status =='pass'">Pass</h4>
+                <h4 class = "fail" *ngIf = "this.status == 'fail'">Fail</h4>
+                <h4>Share to social media</h4>
+                <div class="text-center social-btn">
+                    
+                    <a href="https://twitter.com/intent/tweet?text=I have completed my {{this.testname}} test with  marks {{this.correctquestioncount}} and my status is {{this.status}}" target="_blank" class="btn btn-info"><i class="fa fa-twitter"></i>&nbsp; Twitter</a>
+                    <a href="mailto:?subject=Hey i have completed this test&body=I have completed my {{this.testname}} test with  marks {{this.correctquestioncount}} and my status is {{this.status}}" target="_blank" class="btn btn-danger"><i class="fa fa-envelope"></i>&nbsp; Mail</a>
+                </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+   
+    <!-- /.row -->
+
+  </div>
+
+  
+
+<!-- The actual snackbar -->
+<div id="snackbar">{{this.message}}</div>

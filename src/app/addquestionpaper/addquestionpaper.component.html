@@ -1,5 +1,5 @@
 
-<div class="signup-form">
+<div *ngIf ="!this.finishaddition" class="signup-form">
     <form  [formGroup]= "registerform" (submit)="processdata();">
 		<h2>Q NO:-{{this.questionNumber}}</h2>
         <p class="hint-text">Add question here.</p>
@@ -30,21 +30,43 @@
 			</div>   	
         </div>
         <div class = "row"></div>
-        <h6>correct option:-</h6>
-        <select class = "form-control" formControlName = "answer">
-            <option value="option1">option1</option>
-            <option value=option2>option2</option>
-            <option value="option3">option3</option>
-            <option value="option4">option4</option>
-          </select>
+        <h6>correct options:-</h6>
+
+          <div class="row">
+            
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox" id="radio1" formControlName="Option1" />
+                <label for="radio1">option1</label>
+            </div>
+            <div class=" col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox"  id="radio2" formControlName="Option2"/>
+                <label for="radio2">option2</label>
+            </div>
+           
+
+          </div>
+
+          <div class="row">
+            
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox" id="radio1" formControlName="Option3" />
+                <label for="radio1">option3</label>
+            </div>
+            <div class=" col-lg-6 col-md-6 col-sm-6">
+                <input type="checkbox"  id="radio2" formControlName="Option4"/>
+                <label for="radio2">option4</label>
+            </div>
+           
+
+          </div>
           <br><br>
 
 
-		<div *ngIf = "this.questionNumber<3" class="form-group">
+		<div *ngIf = "this.questionNumber<10" class="form-group">
             <button type="submit" class="btn btn-success btn-lg btn-block">Next Question</button>
         </div>
-        <div *ngIf="this.questionNumber==3" class="form-group">
-            <button  class="btn btn-success btn-lg btn-block" (click)=" processdata();saveQuestionPapaer()">Sumbit Paper</button>
+        <div *ngIf="this.questionNumber==10" class="form-group">
+            <button  class="btn btn-success btn-lg btn-block" (click)="saveQuestionPapaer()">Sumbit Paper</button>
         </div>
     </form>
 

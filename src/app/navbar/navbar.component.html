@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand navbar-light light bg-warning">
+    <a class="navbar-brand" href="#">Test Application</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,10 +9,10 @@
         <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+       <!--  <li class="nav-item">
           <a class="nav-link" routerLink="price">Link</a>
         </li>
-        <li class="nav-item dropdown">
+       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
           </a>
@@ -33,18 +33,19 @@
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </li>
-        <li  class="nav-item">
-          <a class="nav-link" routerLink="questions">Add Product</a>
-        </li>
-        <li *ngIf ="!this.jwtToken" class="nav-item">
+        </li>-->
+
+        <li *ngIf ="!this.jwtToken" class="nav-item active">
           <a class="nav-link" routerLink="login">Login</a>
         </li>
-        <li *ngIf ="!this.jwtToken" class="nav-item">
+        <li *ngIf ="!this.jwtToken" class="nav-item active">
           <a class="nav-link" routerLink="register">Register</a>
         </li>
-        <li  class="nav-item">
-          <a class="nav-link" >Add Q&A</a>
+        <li *ngIf = "this.jwtToken&&this.isTeacher=='true'"  class="nav-item active">
+          <a class="nav-link" routerLink ="teachersdashboard" >Dashboard</a>
+        </li>
+        <li *ngIf = "this.jwtToken&&this.isTeacher!='true'"  class="nav-item active">
+          <a class="nav-link" routerLink ="studentdashboard" >Dashboard</a>
         </li>
       </ul>
     <!-- <form class="form-inline my-2 my-lg-0">
@@ -55,9 +56,7 @@
       <button *ngIf="this.jwtToken" type="button" class="btn btn-default btn-sm" (click)="logoutuser();">
         Log out
       </button>
-      <button type="button" class="btn btn-default btn-sm" >
-      <i style="font-size:24px" class="fa">&#xf07a;</i>
-    </button>
+
     
 
     </div>

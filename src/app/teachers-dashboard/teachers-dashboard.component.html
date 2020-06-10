@@ -1,4 +1,4 @@
-<div class="card text-center">
+<div>
     <div class="card-header">
       
     </div>
@@ -16,6 +16,40 @@
     </div>
 
   </div>
+
+
+    <h4>Available Tests</h4>
+    <br>
+      <div class = "row">
+  
+  <div class="col-lg-9">
+  
+  
+      <div  class="row">
+  
+        <div *ngFor="let details of prod; let index=index;" class="col-lg-4 col-md-6 mb-4">
+         
+          <div  class="card h-100">
+          
+            <div class="card-body">
+              <h4 class="card-title">
+                <a  [routerLink]="['../qp/',details.testid]">{{details.testname}}</a>
+              </h4>
+              <h5>No of questions 10</h5>
+              <h5 class="card-text">Pass mark is 5</h5>
+            </div>
+
+          </div>
+        </div>
+        
+      </div>
+  
+     
+      <!-- /.row -->
+  
+    </div>
+  </div>
+ 
  
  <!-- <div  class="row display">
 

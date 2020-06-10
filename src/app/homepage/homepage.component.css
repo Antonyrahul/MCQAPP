@@ -1,0 +1,24 @@
+body { font: 900 120px/1 'Source Sans Pro', Arial, sans-serif; background: #becccc; text-transform: uppercase; color: #fff; text-align: center; letter-spacing: -3px; padding-top: 10%; }
+
+h1 {
+ 
+  margin-top: 10%;
+  width: 100%;
+  text-align: center;
+
+  text-shadow:     0 1px 0 rgb(212, 50, 21),
+	                 0 2px 0 rgb(19, 214, 214),
+	                 0 3px 0 rgb(212, 50, 21),
+	                 0 4px 0 rgb(19, 214, 214),
+	                 0 5px 0 rgb(212, 50, 21),
+	                 0 6px 0 rgb(19, 214, 214),
+	                 0 7px 0 rgb(212, 50, 21),
+	                 0 8px 0 rgb(19, 214, 214),
+	
+	                 0 0 5px rgba(196, 26, 26, 0.05),
+	                0 1px 3px rgba(65, 14, 146, 0.2),
+	                0 3px 5px rgba(15, 185, 106, 0.2),
+	               0 5px 10px rgba(190, 22, 78, 0.2),
+	              0 10px 10px rgba(43, 192, 23, 0.2),
+	              0 20px 20px rgba(0,0,0,.3);
+}

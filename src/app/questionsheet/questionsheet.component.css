@@ -1,0 +1,22 @@
+div.card
+{
+  background: linear-gradient(to right, #BFF098 0%, #6FD6FF 100%);
+  border-radius: 10px;
+  box-shadow: 10px 10px;
+}
+
+h6
+{
+    color: rebeccapurple;
+}
+h5{
+    color: saddlebrown;
+}
+h4
+{
+    color: seagreen;
+}
+h3
+{
+    text-align: center;
+}

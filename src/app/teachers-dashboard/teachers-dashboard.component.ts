@@ -10,8 +10,26 @@ import { Router } from '@angular/router';
 })
 export class TeachersDashboardComponent implements OnInit {
    testname;
+  prod;
+  email;
+  constructor(private productservice:ProductService,private router:Router) {
+    if(localStorage.getItem("jwtToken")==null)
+    {
+      this.router.navigate(['login'])
+    }
+    if(localStorage.getItem("isTeacher")==null||localStorage.getItem("isTeacher")=="null")
+    {
+      this.router.navigate(['studentdashboard'])
+    }
 
-  constructor(private productservice:ProductService,private router:Router) { }
+    console.log("in")
+    this.email=localStorage.getItem("email")
+
+    this.productservice.getTests('').subscribe((data)=>{
+      console.log(data.data)
+      this.prod = data.data
+  })
+   }
 
   ngOnInit(): void {
   }
@@ -20,6 +38,8 @@ export class TeachersDashboardComponent implements OnInit {
     console.log(testname)
     //this.testnamee = document.getElementById('testname')
     //console.log(this.registerform.value)
+    if(testname!="")
+    {
     this.productservice.genTestId().subscribe((data)=>{
       console.log(data)
       localStorage.removeItem("testname")
@@ -27,6 +47,7 @@ export class TeachersDashboardComponent implements OnInit {
       this.router.navigate(['addquestionpaper/'+data.testid])
 
     })
+  }
   }
 
 

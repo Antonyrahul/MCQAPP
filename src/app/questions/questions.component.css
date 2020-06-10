@@ -135,3 +135,104 @@ body, html{
   background: #222222;
   font-family: 'Lato', sans-serif;
 }
+
+.fail{
+
+  color: red;
+ 	
+  text-align: center;
+
+  animation: blink 1s linear infinite;
+}
+
+.pass{
+
+  color: green;
+  	
+  text-align: center;
+  
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink{
+  0%{opacity: 0;}
+  50%{opacity: .5;}
+  100%{opacity: 1;}
+  }
+  .social-btn .btn {
+    border: none;
+    margin: 10px 3px 0;
+    opacity: 1;
+}
+.social-btn .btn:hover {
+    opacity: 0.9;
+}
+.social-btn .btn-primary {
+    background: #507cc0;
+}
+.social-btn .btn-info {
+    background: #64ccf1;
+}
+.social-btn .btn-danger {
+    background: #df4930;
+}
+.card-title i:hover{
+  transform: scale(1.25) rotate(100deg); 
+  color:#18d4ca;
+  
+}
+.card:hover{
+  transform: scale(1.05);
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+}
+.card-text{
+  height:80px;  
+}
+
+.card::before, .card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(0, 0, 1);
+  transition: transform .3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: '';
+  pointer-events: none;
+}
+.card::before {
+  transform-origin: left top;
+}
+.card::after {
+  transform-origin: right bottom;
+}
+.card:hover::before, .card:hover::after, .card:focus::before, .card:focus::after {
+  transform: scale3d(1, 1, 1);
+}
+div.card
+{
+  background: linear-gradient(to right, #BFF098 0%, #6FD6FF 100%);
+  border-radius: 10px;
+  box-shadow: 10px 10px;
+}
+h4
+{
+  text-align: center;
+}
+div.btn
+{
+  margin-left: 45%;
+}
+h6{
+  margin-left: 87%;
+  color: #5cb85c;
+}
+h5
+{
+  text-align: center;
+}
+div.result
+{
+  margin-left:33%;
+}

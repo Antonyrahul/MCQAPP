@@ -21,8 +21,11 @@
     "@angular/router": "~9.1.0",
     "@popperjs/core": "^2.4.0",
     "bootstrap": "^4.5.0",
+    "bootstrap-select": "^1.13.17",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "rxjs": "~6.5.4",
+    "semantic-ui-css": "^2.4.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

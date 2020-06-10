@@ -6,7 +6,9 @@ import {QuestionsComponent} from './questions/questions.component'
 import {AddquestionpaperComponent} from './addquestionpaper/addquestionpaper.component'
 import {TeachersDashboardComponent} from './teachers-dashboard/teachers-dashboard.component'
 import {StudentdashboardComponent} from './studentdashboard/studentdashboard.component'
-
+import {SheetComponent} from './sheet/sheet.component'
+import {QuestionsheetComponent} from './questionsheet/questionsheet.component'
+import {HomepageComponent} from './homepage/homepage.component'
 
 const routes: Routes = [
   {
@@ -16,10 +18,6 @@ const routes: Routes = [
   {
     path :"register",
     component:RegisterComponent
-  },
-  {
-    path:"questions",
-    component:QuestionsComponent
   },
   {
     path:"addquestionpaper/:id",
@@ -35,7 +33,22 @@ const routes: Routes = [
   {
     path:"test/:id",
     component:QuestionsComponent
+  },
+  {
+    path:"sheet/:id",
+    component:SheetComponent
+  },
+  {
+    path:"qp/:id",
+    component:QuestionsheetComponent
+    
+  },
+  {
+    path:"",
+    component:HomepageComponent
+
   }
+
 
 ];
 

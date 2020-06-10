@@ -1,0 +1,54 @@
+<body>
+
+  <br>
+  
+    <h3>Answer sheet for {{this.testname}}</h3>
+    <h5>Your Result fot this test {{this.teststatus}}</h5>
+    <h5>Time Taken for test {{this.timetaken}} seconds</h5>
+    <h5>Moved from test window {{this.cheatcount}} times </h5>
+    <br>
+
+      <div class = "row">
+  
+  <div class="col-lg-9">
+  
+  
+      <div  class="row">
+  
+        <div *ngFor="let details of answersheet; let index=index;" class="col-lg-4 col-md-6 mb-4">
+          <div class="card h-100">
+          
+            <div class="card-body">
+              <h6>Question:-</h6>
+                <h5>{{details.question}}</h5>
+              
+              <h6>Option1:-</h6>
+                <h5>{{details.Option1}}</h5>
+              <h6>Option2:-</h6>
+                <h5>{{details.Option2}}</h5>
+              <h6>Option3:-</h6>
+                <h5>{{details.Option3}}</h5>
+              <h6>Option4:-</h6>
+                <h5>{{details.Option4}}</h5>
+              <h6>Answer Given By You:-</h6>
+                <h5>{{details.answer}}</h5>
+              <h6>Answer Status:-</h6>
+                <h5>{{details.answerstatus}}</h5>
+              
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+     
+      <!-- /.row -->
+  
+    </div>
+  </div>
+  
+  
+  
+  </body>
